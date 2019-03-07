@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>404 blog</title>
+</head>
+<body>
+<p id="path"></p>
+</body>
+<script>
+const path = window.location.pathname;
+const para = document.getElementById("path");
+const filename = path + ".md";
+
+const client = new XMLHttpRequest();
+client.open('GET', filename);
+client.onreadystatechange = function() {
+  para.innerHTML = client.responseText;
+}
+client.send();
+</script>
+</html>
